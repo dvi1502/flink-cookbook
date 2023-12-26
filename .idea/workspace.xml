@@ -14,12 +14,16 @@
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/docker/cronjob/Dockerfile" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/docker/cronjob/app.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/docker/cronjob/requirements.txt" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/docker/noise/Dockerfile" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/docker/noise/noise-gen-producer.jar" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/docker/noise/start.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/assembly.sbt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/build.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/scala/ru/dvi/flink/test/MainFile.scala" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/scala/ru/dvi/flink/test/MainKafka.scala" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/scala/ru/dvi/flink/test/MainSimpleText.scala" afterDir="false" />
@@ -181,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1703581788091</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="flink read topic kafka&#10;flink read from file">
+      <created>1703581901589</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703581901589</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
