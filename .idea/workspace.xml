@@ -5,29 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3426e9b5-801a-498e-acf7-bfa15e03eb0a" name="Changes" comment="flink read topic kafka&#10;flink read from file">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sbt.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/scala_compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/cronjob/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/cronjob/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/cronjob/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/noise/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/noise/noise-gen-producer.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker/noise/start.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/assembly.sbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/build.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ru/dvi/flink/test/MainFile.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ru/dvi/flink/test/MainKafka.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ru/dvi/flink/test/MainSimpleText.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/ru/dvi/flink/test/MainTopicToFileForBulkFormat.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/scala/ru/dvi/flink/test/MainTopicToFileForRowFormat.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/ru/dvi/flink/test/MainFile.scala" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +67,7 @@
       <recent name="ru.dvi.flink.test" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="ru.dvi.flink.test.Main" />
       <module name="Flink Project" />
@@ -144,10 +127,15 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="noise/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
+    <configuration name="docker-compose.yaml.zookeeper: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
         <settings>
-          <option name="sourceFilePath" value="docker/noise/Dockerfile" />
+          <option name="services">
+            <list>
+              <option value="zookeeper" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
         </settings>
       </deployment>
       <method v="2" />
@@ -155,10 +143,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
+        <item itemvalue="Docker.docker-compose.yaml.zookeeper: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yaml.noise: Compose Deployment" />
         <item itemvalue="Application.MainSimpleText" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Docker.noise/Dockerfile" />
       </list>
     </recent_temporary>
   </component>
@@ -192,8 +180,26 @@
       <option name="project" value="LOCAL" />
       <updated>1703581901589</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="flink read topic kafka&#10;flink read from file">
+      <created>1703582235183</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703582235183</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="flink read topic kafka&#10;flink read from file" />

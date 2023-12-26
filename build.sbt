@@ -17,11 +17,16 @@ val flinkVersion = "1.16.0"
 lazy val root = (project in file(".")).
   settings(
     libraryDependencies ++= Seq(
-      "org.apache.flink" % "flink-clients" % flinkVersion ,
-      "org.apache.flink" %% "flink-scala" % flinkVersion ,
-      "org.apache.flink" %% "flink-streaming-scala" % flinkVersion ,
+      "org.apache.flink" % "flink-clients" % flinkVersion,
+      "org.apache.flink" %% "flink-scala" % flinkVersion,
+      "org.apache.flink" %% "flink-streaming-scala" % flinkVersion,
       "org.apache.flink" % "flink-connector-kafka" % flinkVersion,
+      "org.apache.flink" % "flink-connector-files" % flinkVersion,
+      //      "org.apache.flink" %% "flink-hadoop-compatibility" % "1.17.0" % Test
+      "org.apache.flink" %% "flink-connector-hive" % flinkVersion,
+      "org.apache.flink" % "flink-connector-jdbc" % "3.1.1-1.17",
 
+      "org.apache.flink" % "flink-compress" % flinkVersion,
 
       "org.slf4j" % "slf4j-api" % "2.0.9",
       "org.slf4j" % "slf4j-simple" % "2.0.9",
