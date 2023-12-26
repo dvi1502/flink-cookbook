@@ -1,0 +1,78 @@
+version: "3.8"
+services:
+  zookeeper:
+    image: 'bitnami/zookeeper:3.6'
+    ports:
+      - '2181:2181'
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+      - ZOO_PORT_NUMBER=2181
+    networks:
+      vpcbr:
+        ipv4_address: 10.1.0.4
+
+  kafka:
+    image: 'bitnami/kafka:2.7.0'
+    hostname: kafka
+    ports:
+      - '9093:9093'
+    environment:
+      - KAFKA_CFG_BROKER_ID=1
+      - KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+      - KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=CLIENT:PLAINTEXT,EXTERNAL:PLAINTEXT
+      - KAFKA_CFG_LISTENERS=CLIENT://:9092,EXTERNAL://:9093
+      - KAFKA_CFG_ADVERTISED_LISTENERS=CLIENT://kafka:9092,EXTERNAL://127.0.0.1:9093
+      - KAFKA_CFG_INTER_BROKER_LISTENER_NAME=CLIENT
+    depends_on:
+      - zookeeper
+    networks:
+      vpcbr:
+        ipv4_address: 10.1.0.5
+
+#  py:
+#    hostname: pyproducer
+#    environment:
+#      - KAFKA_TOPIC=test
+#      - KAFKA_BOOSTRAP_SERVER=kafka:9092
+#      - KAFKA_MESSAGE_VALUE=jlhlqwheql;whelrqhwlq;wer;w;erw;r;we;rw;r;w;er
+#
+#    build:
+#      context: ./docker/cronjob
+#      dockerfile: Dockerfile
+#    depends_on:
+#      - kafka
+#    networks:
+#      vpcbr:
+#        ipv4_address: 10.1.0.6
+
+
+
+  noise:
+    hostname: jproducer
+    environment:
+      - KAFKA_TOPIC=test
+      - KAFKA_BOOSTRAP_SERVER=kafka:9092
+      - KAFKA_MESSAGE_VALUE=7937{NUM(7)};{ENG(25,2)};{NUM(8)};{TS};{DT};1251{HEX(8,1)};{RUS(15,0)}
+      - CRON_SCHEDULER=0/5 * * * * ?
+      - BATCH_SIZE=40
+
+    build:
+      context: ./docker/noise
+      dockerfile: Dockerfile
+    depends_on:
+      - kafka
+    networks:
+      vpcbr:
+        ipv4_address: 10.1.0.7
+
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.1.0.0/16
+          gateway: 10.1.0.1
+
+

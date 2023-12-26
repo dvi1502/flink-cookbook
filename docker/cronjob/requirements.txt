@@ -1,0 +1,1 @@
+kafka-python==2.0.2 --hash=sha256:2d92418c7cb1c298fa6c7f0fb3519b520d0d7526ac6cb7ae2a4fc65a51a94b6e
