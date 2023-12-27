@@ -11,7 +11,8 @@ organization := "org.example"
 
 ThisBuild / scalaVersion := "2.12.7"
 
-val flinkVersion = "1.16.0"
+
+val flinkVersion = "1.17.2"
 
 
 lazy val root = (project in file(".")).
